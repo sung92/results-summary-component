@@ -1,0 +1,202 @@
+@use "../abstracts/functions" as f;
+@use "../abstracts/colors";
+
+/*PERFORMANCE*/
+/*************/
+.c-performance {
+    padding: f.rem(25px) f.rem(20px);
+    background: linear-gradient(to top, var(--color-royal-blue), var(--color-slate-blue));
+    border-bottom-right-radius: f.rem(30px);
+    border-bottom-left-radius: f.rem(30px);
+
+    text-align: center;
+    text-wrap: wrap;
+}
+
+.heading-result {
+    font-size: f.rem(18px);
+    color: var(--color-light-lavender);
+    font-weight: 500;
+}
+
+// Number 76 in Circle
+.perf-number {
+    margin-top: f.rem(45px);
+    color: var(--color-white);
+    font-size: f.rem(56px);
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 1;
+    position: relative;
+}
+
+.perf-number span {
+    font-size: f.rem(16px);
+    color: hsla(241, 100%, 89%, 0.5);
+}
+
+.perf-number::before {
+    content: "";
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: f.rem(150px);
+    height: f.rem(150px);
+
+    background: linear-gradient(to bottom, var(--color-violet-blue), var(--color-persian-blue));
+    z-index: -1;
+}
+
+//Great
+.perf-result {
+    margin-top: f.rem(40px);
+    font-size: f.rem(24px);
+    color: var(--color-white);
+}
+
+.perf-text {
+    margin-top: f.rem(5px);
+    margin-bottom: f.rem(10px);
+    font-size: f.rem(16px);
+    color: var(--color-light-lavender);
+}
+
+/*SUMMARY*/
+/*************/
+
+.c-summary {
+    padding: f.rem(30px) f.rem(25px);
+}
+/*Heading*/
+.heading-summary {
+    font-size: f.rem(18px);
+    color: var(--color-gray-blue);
+}
+
+/*Perceptions*/
+.perceptions {
+    margin-top: f.rem(30px);
+    display: flex;
+    flex-direction: column;
+    gap: f.rem(15px);
+}
+
+.per-wrap {
+    display: flex;
+    justify-content: space-between;
+
+    padding: f.rem(15px) f.rem(12px);
+    border-radius: f.rem(10px);
+}
+
+.per-flex-helper {
+    display: flex;
+    gap: f.rem(15px);
+}
+
+.per-reaction {
+    background-color: hsla(0, 100%, 67%, 0.05);
+
+    &-c {
+        color: var(--color-light-red);
+    }
+}
+
+.per-memory {
+    background-color: hsla(39, 100%, 56%, 0.05);
+
+    &-c {
+        color: var(--color-orangey-yellow);
+    }
+}
+
+.per-verbal {
+    background-color: hsla(166, 100%, 37%, 0.05);
+
+    &-c {
+        color: var(--color-green-teal);
+    }
+}
+
+.per-visual {
+    background-color: hsla(234, 85%, 45%, 0.05);
+
+    &-c {
+        color: var(--color-cobalt-blue);
+    }
+}
+
+.per-score {
+    color: var(--color-gray-blue);
+    font-weight: 800;
+
+    & span {
+        color: hsla(224, 30%, 27%, 0.5);
+        font-weight: 500;
+    }
+}
+
+/*BUTTON*/
+.btn {
+    display: block;
+    margin-top: f.rem(25px);
+    text-decoration: none;
+    text-align: center;
+    padding: f.rem(16px);
+    border-radius: f.rem(48px);
+
+    color: var(--color-white);
+    background-color: var(--color-gray-blue);
+
+    transition: all 0.3s;
+
+    &:hover {
+        background: linear-gradient(to top, var(--color-royal-blue), var(--color-slate-blue));
+    }
+}
+
+@media (width > 43.5em) {
+    .c-performance {
+        padding: f.rem(40px) f.rem(30px);
+        border-radius: f.rem(30px);
+    }
+
+    .heading-result {
+        font-size: f.rem(24px);
+    }
+
+    // Number 76 in Circle
+    .perf-number {
+        font-size: f.rem(72px);
+        font-weight: 700;
+    }
+
+    //Great
+    .perf-result {
+        font-size: f.rem(32px);
+        font-weight: 700;
+    }
+
+    .perf-text {
+        margin-top: f.rem(17px);
+        font-size: f.rem(18px);
+        text-wrap: pretty;
+    }
+
+    /*SUMMARY*/
+    /*************/
+    .c-summary {
+        padding: f.rem(40px) f.rem(35px);
+    }
+
+    .heading-summary {
+        font-size: f.rem(24px);
+    }
+}
+  
