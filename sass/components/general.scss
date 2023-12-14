@@ -152,12 +152,12 @@
     border-radius: f.rem(48px);
 
     color: var(--color-white);
-    background-color: var(--color-gray-blue);
+    background-image: linear-gradient(to top, var(--color-gray-blue), var(--color-gray-blue));
 
-    transition: all 0.3s;
+    transition: all 4s;
 
     &:hover {
-        background: linear-gradient(to top, var(--color-royal-blue), var(--color-slate-blue));
+        background-image: linear-gradient(to top, var(--color-royal-blue), var(--color-slate-blue));
     }
 }
 
