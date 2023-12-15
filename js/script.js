@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const mainHtml = fs.readFileSync("index.html", 'utf-8');
+const perceptions = document.querySelector('.perceptions');
 const tempCard = fs.readFileSync("categories.html", 'utf-8')
 const data = fs.readFileSync("data.json", 'utf-8');
 const dataObj = JSON.parse(data);
@@ -19,5 +19,4 @@ console.log(dataObj);
 const cardsHtml = dataObj.map( el => replaceTemplate(tempCard, el)).join('');
 console.log(cardsHtml);
 
-mainHtml.replace('{%CARDS%}', cardsHtml);
-console.log(mainHtml);
+perceptions.insertAdjacentHTML('afterbegin', cardsHtml);
