@@ -45,8 +45,8 @@
     left: 50%;
     transform: translate(-50%, -60%);
 
-    width: f.rem(170px);
-    height: f.rem(170px);
+    width: f.rem(150px);
+    height: f.rem(150px);
 
     background: linear-gradient(to bottom, var(--color-violet-blue), var(--color-persian-blue));
     z-index: -1;
@@ -172,8 +172,14 @@
 
     // Number 76 in Circle
     .perf-number {
+        margin-top: f.rem(85px);
         font-size: f.rem(72px);
         font-weight: 700;
+    }
+
+    .perf-number::before {
+        width: f.rem(170px);
+        height: f.rem(170px);
     }
 
     //Great
