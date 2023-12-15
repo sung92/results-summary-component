@@ -14,11 +14,11 @@ const generateMarkup = function(data) {
     }).join('')
 };
 
-
-const htmlTemplate = function() {
-    fetch("./../data.json")
-    .then(res => res.json())
-    .then(data => console.table(data));
+const htmlTemplate = async function() {
+    const data = await fetch('data.json');
+    console.log(data);
+    const result = await data.json();
+    console.log(result);
 }
 
 htmlTemplate();
