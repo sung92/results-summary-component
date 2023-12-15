@@ -1,11 +1,14 @@
+const fs = require('fs');
 const perceptions = document.querySelector('.perceptions');
+const data = fs.readFileSync("data.json", 'utf-8');
+const dataObj = JSON.parse(data);
 
 const generateMarkup = function(data) {
     return data.map( el => {
         return `
         <div class="per-wrap per-${el.category.toLowerCase()}">
         <div class="per-flex-helper">
-             <img src="${el.icon}">
+             <use xlink:href=${el.icon}></use>
              <p class="per-${el.category.toLowerCase()}-c">${el.category}</p>
          </div>
         <p class="per-score">${el.score}<span> / 100</span></p>
@@ -14,11 +17,7 @@ const generateMarkup = function(data) {
     }).join('')
 };
 
-const htmlTemplate = async function() {
-    const data = await fetch('data.json');
-    console.log(data);
-    const result = await data.json();
-    console.log(result);
-}
+const markup = generateMarkup(dataObj);
 
-htmlTemplate();
+console.log(markup);
+perceptions.insertAdjacentHTML('afterbegin', markup);
